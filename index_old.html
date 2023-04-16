@@ -1,0 +1,67 @@
+
+<html>
+    <body> 
+        <p onclick="play()" style="background:red;">
+                Play
+        </p>
+        <span id="sound_time">
+s
+        </span>
+        <div style="display: flex;flex-direction: column; ">
+        <div style="height:30px" class="seek_bar">
+            <div style="position: absolute; background:  rgb(177, 170, 243);height:inherit; width: 500px;">
+
+            </div>
+            <div id="current_bar_seek" style="position:absolute;background:  rgb(139, 127, 247);height:inherit;width: 120px;">
+
+            </div>
+        </div>
+        <div style="position:relative; height: 150px;pointer-events:none;" class="volume_bar">
+            <div  id="volume_bar_background" style="pointer-events:auto;position:absolute;background:  rgb(157, 200, 248);height:inherit;width: 10px;">
+
+            </div>
+            <div id="current_bar_volume" style="bottom:0px;position:absolute;position:absolute;background:  rgb(28, 180, 142);height:inherit;width: 10px;">
+
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
+<script src="howler.js-2.2.3/dist/howler.js"></script>
+<script>
+    let id1;
+    var sound = new Howl({
+      src: ['soad.mp3'] 
+    });
+    
+    function play(){
+        if(sound.playing()){
+            sound.pause(id1);
+        }else{
+            id1=sound.play();
+        }
+    }
+
+    document.getElementById('volume_bar_background').onclick = function volumeChange(e){
+        let div = document.getElementById('volume_bar_background');
+        let rect = e.target.getBoundingClientRect();
+        let y = e.clientY - rect.top;  //y position within the element.
+        
+        let vol = (y-rect.height);
+        console.log(vol);
+        sound.volume(vol/150*-1,id1)
+        document.getElementById('current_bar_volume').style.height=vol*-1;
+
+    }
+
+    const timeID = setInterval(timeAndDate, 10);
+
+    function timeAndDate() {
+        if(sound.playing()){
+            document.getElementById("sound_time").innerHTML=`${parseInt(sound.seek(id1))}/${parseInt(sound.duration(id1))}` ;
+        
+        }
+        document.getElementById("current_bar_seek").style.width=sound.seek(id1)/sound.duration(id1)*500;
+    }
+    
+</script> 

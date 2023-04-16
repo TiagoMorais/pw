@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+   box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+}
+
+.tema {
+    background-color: rgb(92 10 12);
+    color: white;
+}
+
+.topWrapper {
+    border: 2px solid black;
+    display: flex;
+}
+
+.openIcon {
+    cursor: pointer;
+    background-color: orange;
+    color: white;
+    text-align: center;
+    padding: 2px;
+    font-size: 10px;
+    width: 30px;
+}
+
+.top {
+    display: inline-block;
+    width: 100%;
+    line-height: 30px;
+    text-align: center;
+    border-left: 2px solid black;
+}
+
+.middleWrapper {
+    display: flex;
+    height: 100%;
+}
+
+.lat {
+    flex-grow: 0.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.equ {
+    flex-grow: 2;
+}
+
+.center {
+    flex-grow: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+.right {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 2px solid black;
+}
+
+.footer {
+    height: 30px;
+}
+
+.centerTop {
+    display: flex;
+    flex-grow: 3;
+}
+
+.centerMid {
+    flex-grow: 0.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.pianoWrapper {
+    flex-grow: 2;
+}
+
+.centerBottom {
+    flex-grow: 0.3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid black;
+}
+
+.CTLeft {
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.CTRight {
+    flex-grow: 15;
+    display: flex;
+    flex-direction: column;
+}
+
+.CTRightBottom {
+    flex-grow: 2;
+}
+
+.musicWave {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    background-color: #db8e02;
+    color:white;
+    font-size: 30px;
+}
+
+.piano {
+    flex-grow: 1;
+}
+
+.pianoMain {
+    flex-grow: 12;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer {
+    border: 2px solid black;
+}
