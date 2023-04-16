@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="howler.js-2.2.3/dist/howler.js"></script>
+    <script src="./wavesurfer.js"></script>
     <script src="./logic.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Music</title>
 </head>
-<body>
+<body style="display:flex; flex-direction: column;">
     <div class="topWrapper">
         <input style="display: none;"  id="fileSelect" type="file">
         <div onclick="addMusic()" class="openIcon">Open Icon</div>
@@ -21,8 +22,7 @@
         <div class="center">
             <div class="centerTop">
                 <div class="CTLeft tema">left</div>
-                <div class="CTRight tema">
-                    <div class="musicWave">music wave</div>
+                <div class="MusicWaveContainer tema">
                     <div class="CTRightBottom"></div>
                 </div>
             </div>
@@ -35,6 +35,13 @@
         </div>
         <div class="right tema">right</div>
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+        <div class="controls"  >
+            <div onclick="play()"> Play </div>
+            <div onclick="stop()"> Stop </div>
+            <div onclick="pause()"> Pause </div>
+        </div> 
+        
+    </div>
 </body>
 </html>
