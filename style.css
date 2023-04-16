@@ -21,6 +21,10 @@ body {
     color: white;
 }
 
+.temaDark{
+    background: rgb(66, 66, 66);
+}
+
 .topWrapper {
     border: 2px solid black;
     display: flex;
@@ -50,7 +54,7 @@ body {
 }
 
 .lat {
-    flex-grow: 0.3;
+    width: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +71,7 @@ body {
 }
 
 .right {
-    flex-grow: 1;
+    width: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,11 +84,10 @@ body {
 
 .centerTop {
     display: flex;
-    flex-grow: 3;
 }
 
 .centerMid {
-    flex-grow: 0.3;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,12 +96,8 @@ body {
     border-bottom: 2px solid black;
 }
 
-.pianoWrapper {
-    flex-grow: 2;
-}
-
 .centerBottom {
-    flex-grow: 0.3;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -116,8 +115,13 @@ body {
 
 .MusicWaveContainer {
     flex-grow: 15;
+    min-height: 260px;
+    max-height: 522px;
     border-bottom: 2px solid black ;
+    overflow: auto;
 }
+
+
 
 .CTRightBottom {
     flex-grow: 2;
@@ -128,13 +132,15 @@ body {
     border-bottom: 3px black solid;
 }
 
-.piano {
-    flex-grow: 1;
+.pianoWrapper{
+    min-height: 0px;
+    overflow-y: auto;
 }
 
+
 .pianoMain {
-    flex-grow: 12;
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
 }
@@ -149,13 +155,74 @@ body {
 
 .controls{
     display: flex;
-    
+    align-items: center;
+
 
 }
 
-.controls div{
+.controls > div{
     margin: 1px;
     padding: 9px;
     cursor: pointer;
     background:rgb(129, 129, 129);
 }
+
+#indexController{
+    display: flex;
+    flex-direction: column;
+}
+
+.time{
+    display: flex;
+}
+
+.time>p{
+    padding: 0px 7px 0px 7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.wrapper {
+    flex-direction: row;
+    display: ;
+    }
+
+
+.piano {
+    --height: 100px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .key {
+    height: var(--width);
+    width: calc(var(--width) * 4);
+  }
+  
+  .white {
+    --width: 50px;
+    height: calc(var(--height) * 0.25);
+    background-color: white;
+    border: 1px solid #333;
+    border-radius: 0 4px 4px 0;
+  }
+  
+  .black {
+    --width: 30px;
+    height: calc(var(--height) * 0.15);
+    background-color: black;
+    border-radius: 0 2px 2px 0;
+    margin-top: calc((var(--height) * 0.15)/-2);
+    margin-bottom: calc((var(--height) * 0.15)/-2);
+    z-index: 2;
+  }
+  
